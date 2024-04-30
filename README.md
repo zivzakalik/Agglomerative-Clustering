@@ -1,22 +1,35 @@
-# Agglomerative-Clustering
+# Agglomerative Clustering
 
-**Distance method**
+## Distance Measurement
 
-In order to compute which of the clusters need to be merged we used euclidean distance.
+We employ the Euclidean distance to determine which clusters should be merged. This metric helps in assessing the proximity between different clusters effectively.
 
-**The quality of the algorithm**
+## Algorithm Quality
 
-The quality of the algorithm is measured with purity.
+The performance of our clustering algorithm is evaluated based on its purity. This metric helps in determining the accuracy with which the algorithm groups samples into the correct clusters.
 
-**Specifics**
+## Algorithm Overview
 
-  1. The purpose of the algorithm is to cluster the samples according to the features and produce which sample matches a specific type of cancer.
-  2. The stop condition: stop clustering when reaching 7 clusters.
-  3. We used two types of agglomerative clustering: Single link and Complete link.
+### Purpose
 
-**Classes**
+The algorithm aims to cluster samples based on their features to identify specific types of cancer accurately.
 
-  1. Cluster: Object That represents a cluster.
-  2. Data: In this class we orgenize the data and computing the initial distance matrix.
-  3. Link: Contains three classes: Link, SingleLink, CompleteLink.
-  4. Agglomerative_clustering: In this class we update the clusters and run the algorithm.
+### Stopping Criterion
+
+The clustering process is halted once the number of clusters reaches seven. This stop condition ensures that the clusters remain meaningful and manageable.
+
+### Methods Employed
+
+We utilize two variants of agglomerative clustering:
+- **Single Link**: This method considers the minimum distance between clusters for merging decisions.
+- **Complete Link**: In contrast, this method considers the maximum distance between clusters to guide the merging process.
+
+## Implementation Classes
+
+1. **Cluster**: Represents a single cluster containing grouped samples.
+2. **Data**: This class is responsible for organizing the data and computing the initial distance matrix, essential for the clustering process.
+3. **Link**: This superclass contains three subclasses:
+   - **Link**: The base class for linkage criteria.
+   - **SingleLink**: Implements the single link clustering method.
+   - **CompleteLink**: Implements the complete link clustering method.
+4. **AgglomerativeClustering**: This class updates the clusters and oversees the execution of the algorithm, ensuring that the clustering process adheres to the specified methods and stopping criteria.
